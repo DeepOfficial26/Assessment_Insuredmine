@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Policy Aggregation</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Policy Aggregation</h1>
+        <% if (aggregation.length > 0) { %>
+            <ul>
+                <% aggregation.forEach(agg => { %>
+                    <li>User ID: <%= agg._id %>, Total Policies: <%= agg.totalPolicies %></li>
+                <% }) %>
+            </ul>
+        <% } else { %>
+            <p>No data to display.</p>
+        <% } %>
+    </div>
+</body>
+</html>

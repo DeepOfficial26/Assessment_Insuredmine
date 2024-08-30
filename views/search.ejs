@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Policy by Username</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Search Policy by Username</h1>
+        <form action="/search" method="post"> <!-- Use POST method -->
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <button type="submit">Search</button>
+        </form>
+
+        <% if (policies && policies.length > 0) { %>
+            <h2>Policies for <%= policies[0].userId.firstname %>:</h2>
+            <ul>
+                <% policies.forEach(policy => { %>
+                    <li>Policy Number: <%= policy.policyNumber %> | Start Date: <%= policy.policyStartDate %> | End Date: <%= policy.policyEndDate %></li>
+                <% }) %>
+            </ul>
+        <% } else if (message) { %>
+            <p><%= message %></p>
+        <% } %>
+    </div>
+</body>
+</html>
