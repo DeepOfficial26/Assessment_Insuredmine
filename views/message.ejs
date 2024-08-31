@@ -1,0 +1,27 @@
+<!-- views/messages.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Messages</title>
+</head>
+<body>
+    <h1>All Scheduled Messages</h1>
+    <% if (messages.length > 0) { %>
+        <ul>
+            <% messages.forEach(function(message) { %>
+                <li>
+                    <strong>Message:</strong> <%= message.message %> <br>
+                    <strong>Scheduled For:</strong> <%= message.scheduledFor.toLocaleString() %>
+                </li>
+            <% }) %>
+        </ul>
+    <% } else { %>
+        <p>No messages found.</p>
+    <% } %>
+    <br>
+    <a href="/api/scheduleMessage">Schedule a New Message</a>
+</body>
+</html>

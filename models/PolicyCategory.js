@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const PolicyCategorySchema = new Schema({
-    categoryName: { type: String, required: true }
+    category_name: { type: String }
     // Add other fields as needed
 });
 
