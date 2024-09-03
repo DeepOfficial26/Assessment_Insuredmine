@@ -34,8 +34,8 @@ exports.scheduleMessage = async (req, res) => {
 exports.getAllMessages = async (req, res) => {
     try {
         const messages = await Message.find().sort({ scheduledFor: -1 });
-        res.render('messages', { messages });
+        res.render('message', { messages });
     } catch (error) {
-        res.render('messages', { messages: [], message: 'Error retrieving messages' });
+        res.render('message', { messages: [], message: 'Error retrieving messages' });
     }
 };

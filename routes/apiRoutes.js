@@ -14,6 +14,7 @@ router.get('/search', (req, res) => res.render('search', { message: null, polici
 router.post('/search', userController.searchByUsername);
 
 router.get('/aggregate', userController.aggregatePolicies);
+router.get('/scheduleMessage', (req, res) => res.render('scheduleMessage', { message: null }));
 router.post('/scheduleMessage', messageController.scheduleMessage);
 
 // Route to get all messages

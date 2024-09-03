@@ -12,7 +12,7 @@
     <% if (message) { %>
         <p><%= message %></p>
     <% } %>
-    <form action="/api/scheduleMessage" method="POST">
+    <form action="/scheduleMessage" method="POST">
         <label for="message">Message:</label>
         <input type="text" id="message" name="message" required>
         <br>
@@ -25,6 +25,6 @@
         <button type="submit">Schedule Message</button>
     </form>
     <br>
-    <a href="/api/messages">View All Messages</a>
+    <a href="/messages">View All Messages</a>
 </body>
 </html>
